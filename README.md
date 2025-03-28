@@ -1,6 +1,6 @@
 # EmployWise User Management App
 
-![React+Vite](https://img.shields.io/badge/React-18.2.0-blue)
+![React+Vite](https://img.shields.io/badge/React-19.0.0-blue)
 ![MaterialUI](https://img.shields.io/badge/Material%20UI-5.14.2-blueviolet)
 ![Axios](https://img.shields.io/badge/Axios-1.5.0-yellowgreen)
 
@@ -55,3 +55,47 @@ npm run dev
 
 ```
 The application will open in your browser at http://localhost:5173
+
+# Usage
+
+## Login Credentials  
+
+Use these credentials to log in:  
+
+- **Email**: `eve.holt@reqres.in`  
+- **Password**: `cityslicka`  
+
+## API Endpoints Used  
+
+| Feature      | Endpoint                      | Method |
+|-------------|--------------------------------|--------|
+| Login       | `/api/login`                   | POST   |
+| List Users  | `/api/users?page={page}`       | GET    |
+| Update User | `/api/users/{id}`              | PUT    |
+| Delete User | `/api/users/{id}`              | DELETE |
+
+## Project Structure  
+
+src/
+├── components/
+│   ├── Auth/
+│   │   └── Login.jsx
+│   ├── Users/
+│   │   ├── UserList.jsx
+│   │   ├── UserCard.jsx
+│   │   └── EditUser.jsx
+│   └── Layout/
+│       └── Navbar.jsx
+├── context/
+│   └── AuthContext.js
+├── services/
+│   └── api.js
+├── App.js
+└── index.js
+
+
+## Technologies Used  
+- React + Vite
+- Material UI  
+- Axios  
+- React Router  
