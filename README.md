@@ -36,7 +36,10 @@ A responsive React application for user management with authentication, built wi
 1. Clone the repository:
 ```bash
 git clone https://github.com/your-username/employwise-user-management.git
+
 cd employwise-user-management
+
+```
 
 Install dependencies:
 ```bash
