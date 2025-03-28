@@ -1,9 +1,5 @@
 # EmployWise User Management App
 
-![React+Vite](https://img.shields.io/badge/React-19.0.0-blue)
-![MaterialUI](https://img.shields.io/badge/Material%20UI-5.14.2-blueviolet)
-![Axios](https://img.shields.io/badge/Axios-1.5.0-yellowgreen)
-
 A responsive React+Vite application for user management with authentication, built with Material-UI and integrated with the ReqRes API.
 
 ## Features
@@ -27,13 +23,14 @@ A responsive React+Vite application for user management with authentication, bui
 
 ## Demo
 
-[Live Demo](https://employwise-demo.vercel.app) (if deployed)
+[Live Demo](https://employwise-user-management-rho.vercel.app/)
 
 ![App Screenshot](/screenshot.png)
 
 ## Installation
 
-1. Clone the repository:
+1. Clone the repository:- Framer Motion  
+
 
 ```bash
 git clone https://github.com/richmond-andoh/employwise_user_management.git
