@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import Login from './components/Auth/Login';
 import UserList from './components/Users/UserList';
-import EditUser from './components/Users/EditUser';
+import EditUser from './components/Users/UserEdit';
 import Navbar from './components/Layout/Navbar';
 import { Container } from '@mui/material';
 

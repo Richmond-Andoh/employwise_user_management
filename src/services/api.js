@@ -15,7 +15,7 @@ export const loginUser = async (email, password) => {
    }
 };
 
-export const fetchUsers = async (page = 1) => {
+export const getUsers = async (page = 1) => {
     try {
         const response = await axios.get(`${BASE_URL}/users`, {
             params: {
@@ -23,7 +23,7 @@ export const fetchUsers = async (page = 1) => {
             }
         });
 
-        return response.date;
+        return response.data;
     } catch (error) {
          throw new Error(error.response?.data?.error || "Failed to fetch users");
     }

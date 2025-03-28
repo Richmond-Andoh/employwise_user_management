@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { getUsers, deleteUser } from '../../services/api';
-import { useAuth } from '../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { getUsers, deleteUser } from "../../services/api";
+import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 import {
   Table,
   TableBody,
+  Container,
   TableCell,
   TableContainer,
   TableHead,
   TableRow,
+  TextField,
+  InputAdornment,
   Paper,
   Button,
   Typography,
@@ -16,22 +19,24 @@ import {
   Pagination,
   IconButton,
   CircularProgress,
-} from '@mui/material';
-import { Edit, Delete } from '@mui/icons-material';
-import UserCard from './UserCard';
+} from "@mui/material";
+import { Edit, Delete } from "@mui/icons-material";
+import UserCard from "./UserCard";
+import { Search } from "@mui/icons-material";
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState("");
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const { token, logout } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!token) {
-      navigate('/login');
+      navigate("/login");
       return;
     }
 
@@ -51,6 +56,15 @@ const UserList = () => {
     fetchUsers();
   }, [page, token, navigate]);
 
+  const filteredUsers = users.filter((user) => {
+    const searchLower = searchTerm.toLowerCase();
+    return (
+      user.first_name.toLowerCase().includes(searchLower) ||
+      user.last_name.toLowerCase().includes(searchLower) ||
+      user.email.toLowerCase().includes(searchLower)
+    );
+  });
+
   const handleDelete = async (id) => {
     try {
       await deleteUser(id);
@@ -66,7 +80,7 @@ const UserList = () => {
 
   if (loading) {
     return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+      <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
         <CircularProgress />
       </Box>
     );
@@ -96,7 +110,7 @@ const UserList = () => {
         </Button>
 
         {/* Mobile View - Cards */}
-        <Box sx={{ display: { xs: 'block', md: 'none' }, mb: 4 }}>
+        <Box sx={{ display: { xs: "block", md: "none" }, mb: 4 }}>
           {users.map((user) => (
             <UserCard
               key={user.id}
@@ -107,8 +121,26 @@ const UserList = () => {
           ))}
         </Box>
 
+        <TextField
+          label="Search Users"
+          variant="outlined"
+          fullWidth
+          margin="normal"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <Search />
+              </InputAdornment>
+            ),
+          }}
+        />
         {/* Desktop View - Table */}
-        <TableContainer component={Paper} sx={{ display: { xs: 'none', md: 'block' } }}>
+        <TableContainer
+          component={Paper}
+          sx={{ display: { xs: "none", md: "block" } }}
+        >
           <Table>
             <TableHead>
               <TableRow>
@@ -120,13 +152,13 @@ const UserList = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {users.map((user) => (
+              {filteredUsers.map((user) => (
                 <TableRow key={user.id}>
                   <TableCell>
                     <img
                       src={user.avatar}
                       alt={`${user.first_name} ${user.last_name}`}
-                      style={{ width: 50, height: 50, borderRadius: '50%' }}
+                      style={{ width: 50, height: 50, borderRadius: "50%" }}
                     />
                   </TableCell>
                   <TableCell>{user.first_name}</TableCell>
@@ -146,7 +178,7 @@ const UserList = () => {
           </Table>
         </TableContainer>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
           <Pagination
             count={totalPages}
             page={page}
