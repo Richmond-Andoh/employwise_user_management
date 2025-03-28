@@ -75,7 +75,6 @@ Use these credentials to log in:
 | Delete User | `/api/users/{id}`              | DELETE |
 
 ## Project Structure  
-
 src/
 ├── components/
 │   ├── Auth/
