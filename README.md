@@ -73,24 +73,6 @@ Use these credentials to log in:
 | Update User | `/api/users/{id}`              | PUT    |
 | Delete User | `/api/users/{id}`              | DELETE |
 
-## Project Structure  
-src/
-├── components/
-│   ├── Auth/
-│   │   └── Login.jsx
-│   ├── Users/
-│   │   ├── UserList.jsx
-│   │   ├── UserCard.jsx
-│   │   └── EditUser.jsx
-│   └── Layout/
-│       └── Navbar.jsx
-├── context/
-│   └── AuthContext.js
-├── services/
-│   └── api.js
-├── App.js
-└── index.js
-
 
 ## Technologies Used  
 - React + Vite
