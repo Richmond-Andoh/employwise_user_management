@@ -25,6 +25,8 @@ A responsive React+Vite application for user management with authentication, bui
 
 [Live Demo](https://employwise-user-management-rho.vercel.app/)
 
+## Screenshot
+
 ![App Screenshot](./public/shot.png)
 
 ## Installation
