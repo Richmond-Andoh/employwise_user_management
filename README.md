@@ -1,10 +1,10 @@
 # EmployWise User Management App
 
-![React](https://img.shields.io/badge/React-18.2.0-blue)
+![React+Vite](https://img.shields.io/badge/React-18.2.0-blue)
 ![MaterialUI](https://img.shields.io/badge/Material%20UI-5.14.2-blueviolet)
 ![Axios](https://img.shields.io/badge/Axios-1.5.0-yellowgreen)
 
-A responsive React application for user management with authentication, built with Material-UI and integrated with the ReqRes API.
+A responsive React+Vite application for user management with authentication, built with Material-UI and integrated with the ReqRes API.
 
 ## Features
 
@@ -34,8 +34,9 @@ A responsive React application for user management with authentication, built wi
 ## Installation
 
 1. Clone the repository:
+
 ```bash
-git clone https://github.com/your-username/employwise-user-management.git
+git clone https://github.com/richmond-andoh/employwise_user_management.git
 
 cd employwise-user-management
 
@@ -45,8 +46,12 @@ Install dependencies:
 ```bash
 npm install
 
+```
+
 Start the development server:
+
 ```bash
 npm run dev
 
+```
 The application will open in your browser at http://localhost:5173
