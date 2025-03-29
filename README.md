@@ -31,7 +31,7 @@ A responsive React+Vite application for user management with authentication, bui
 
 ## Installation
 
-1. Clone the repository:- Framer Motion  
+1. Clone the repository:  
 
 
 ```bash
