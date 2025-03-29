@@ -42,6 +42,7 @@ cd employwise-user-management
 ```
 
 Install dependencies:
+
 ```bash
 npm install
 
@@ -53,6 +54,7 @@ Start the development server:
 npm run dev
 
 ```
+
 The application will open in your browser at http://localhost:5173
 
 # Usage
