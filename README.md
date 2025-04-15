@@ -35,6 +35,7 @@ A responsive React+Vite application for user management with authentication, bui
 
 
 ```bash
+
 git clone https://github.com/richmond-andoh/employwise_user_management.git
 
 cd employwise_user_management
@@ -44,6 +45,7 @@ cd employwise_user_management
 Install dependencies:
 
 ```bash
+
 npm install
 
 ```
@@ -51,6 +53,7 @@ npm install
 Start the development server:
 
 ```bash
+
 npm run dev
 
 ```
