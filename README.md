@@ -8,6 +8,7 @@ A responsive React+Vite application for user management with authentication, bui
   - Login/logout functionality
   - Token-based authentication
   - Protected routes
+    
 
 - 👥 **User Management**
   - Paginated user listing
